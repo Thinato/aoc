@@ -5,8 +5,8 @@ pub fn execute() {
     let file = File::open("inputs/day5").unwrap();
     let reader = BufReader::new(file);
 
-    let mut spoiled_count = 0;
-    let mut fresh_count = 0;
+    let mut fresh_count_1 = 0;
+    let mut fresh_count_2 = 0;
 
     let mut ranges: Vec<(i64, i64)> = Vec::default();
 
@@ -27,7 +27,7 @@ pub fn execute() {
             for (start, end) in &ranges.clone() {
                 if value >= *start && value <= *end {
                     println!("{} is fresh", value);
-                    spoiled_count += 1;
+                    fresh_count_1 += 1;
                 }
             }
         }
@@ -35,11 +35,11 @@ pub fn execute() {
 
     for (start, end) in ranges.clone() {
         println!("fresh: {} - {} = {}", end, start, end - start);
-        fresh_count += (end + 1) - start
+        fresh_count_2 += (end + 1) - start
     }
 
-    println!("part 1: {}", spoiled_count);
-    println!("part 2: {}", fresh_count);
+    println!("part 1: {}", fresh_count_1);
+    println!("part 2: {}", fresh_count_2);
 }
 
 fn merge_ranges(mut ranges: Vec<(i64, i64)>) -> Vec<(i64, i64)> {
