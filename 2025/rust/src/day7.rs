@@ -3,9 +3,9 @@ use std::io::{BufReader, prelude::*};
 
 pub fn execute() {
     let path = "inputs/day7";
-    // let part1 = part1(path);
+    let part1 = part1(path);
     let part2 = part2(path);
-    // println!("part 1: {}", part1);
+    println!("part 1: {}", part1);
     println!("part 2: {}", part2);
 }
 
@@ -56,7 +56,7 @@ fn part2(path: &str) -> i64 {
                         new_q_beams_sum[i] += new_q_beams[i];
                         should_sum = true
                     }
-                    println!("nq {:?}", new_q_beams);
+                    // println!("nq {:?}", new_q_beams);
                     new_beams.dedup();
                     beams = new_beams.clone();
                 }
@@ -70,8 +70,8 @@ fn part2(path: &str) -> i64 {
         if should_sum {
             quantum_beams = new_q_beams_sum.clone();
         }
-        println!("kq {:?}", keep_q_beams);
-        println!(" q {:?}", quantum_beams);
+        // println!("kq {:?}", keep_q_beams);
+        // println!(" q {:?}", quantum_beams);
 
         let mut chars: Vec<char> = pline.chars().collect();
 
@@ -79,7 +79,7 @@ fn part2(path: &str) -> i64 {
             chars[beam] = '|';
         }
 
-        println!("{}", chars.into_iter().collect::<String>())
+        // println!("{}", chars.into_iter().collect::<String>())
     }
     quantum_beams.iter().sum::<usize>() as i64
 }
@@ -128,15 +128,15 @@ fn part1(path: &str) -> i64 {
                 _ => println!("unhandled char: {}", c),
             }
         }
-        println!("{:?}", quantum_beams);
+        // println!("{:?}", quantum_beams);
 
-        let mut chars: Vec<char> = pline.chars().collect();
+        // let mut chars: Vec<char> = pline.chars().collect();
 
-        for &beam in &beams {
-            chars[beam] = '|';
-        }
+        // for &beam in &beams {
+        //     chars[beam] = '|';
+        // }
 
-        println!("{}", chars.into_iter().collect::<String>())
+        // println!("{}", chars.into_iter().collect::<String>())
     }
 
     part1
