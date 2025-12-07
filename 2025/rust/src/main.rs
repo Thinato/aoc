@@ -5,6 +5,7 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -24,7 +25,7 @@ fn execute(day: i8) {
         3 => day3::execute(),
         4 => day4::execute(),
         5 => day5::execute(),
-        6 => println!("not implemented"),
+        6 => day6::execute(),
         7 => println!("not implemented"),
         8 => println!("not implemented"),
         9 => println!("not implemented"),
